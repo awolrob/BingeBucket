@@ -47,7 +47,8 @@ const getStreamList = async function (servicesIn, searchTextIn) {
 		},
 		headers: {
 			'x-rapidapi-host': 'streaming-availability.p.rapidapi.com',
-			'x-rapidapi-key': process.env.STREAM_API_KEY
+			'x-rapidapi-key': 'f2ee12cbffmsh9a043e6ff8eb403p15aba3jsn46870cf178d2'
+			// 'x-rapidapi-key': process.env.STREAM_API_KEY
 		}
 	};
 
@@ -87,7 +88,7 @@ const getStreamList = async function (servicesIn, searchTextIn) {
 		},
 		headers: {
 			'x-rapidapi-host': 'streaming-availability.p.rapidapi.com',
-			'x-rapidapi-key': process.env.STREAM_API_KEY
+			'x-rapidapi-key': 'f2ee12cbffmsh9a043e6ff8eb403p15aba3jsn46870cf178d2'
 		}
 	};
 
