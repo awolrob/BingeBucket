@@ -8,16 +8,16 @@ router.get("/", async (req, res) => {
 })
 
 router.post('/', async (req, res) => {
-  console.log(`
+  // console.log(`
   
-  server side` , req.body.service, req.body.searchText)
+  // server side` , req.body.service, req.body.searchText)
 
   const data = await streamData.getStreamList(req.body.service, req.body.searchText);
-  console.log(`
+  // console.log(`
   
-  render the search page
+  // render the search page
   
-  `);
+  // `);
 
   res.json(data)
 });
@@ -25,12 +25,12 @@ router.post('/', async (req, res) => {
 router.get('/search/:id', async (req, res) => {
   // const data = await streamData.getStreamList('netflix,hulu,prime,showtime,apple,paramount,disney,hbo,peacock');
   const data = await streamData.getItemData(req.params.id);
-  console.log(data);
-  console.log(`
+  // console.log(data);
+  // console.log(`
   
-  ======================`);
-  // console.log(data2);
-  console.log('======================');
+  // ======================`);
+  // // console.log(data2);
+  // console.log('======================');
   res.render('homepage', {
     loggedIn: req.session.loggedIn,
     streamData: [data]

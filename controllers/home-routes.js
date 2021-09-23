@@ -12,9 +12,11 @@ router.get('/', async (req, res) => {
   
   // ======================`);
   // console.log(data2);
-  console.log('======================');
+  // console.log('======================');
   res.render('homepage', {
     loggedIn: req.session.loggedIn,
+    userID: req.session.user_id,
+    userName: req.session.username,
     streamData: data
   });
 });

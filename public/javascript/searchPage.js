@@ -11,14 +11,14 @@ async function runSearch(userService, UserSearchText) {
                 <div class="card-body">
                     <div class="accordion" id="accordionExample">
                     <div class="accordion-item">
-                        <h2 class="accordion-header" id="headingOne">
+                        <h2 class="accordion-header" id="heading`+ streamData.imdbID +`">
                         <button class="descriptionButton accordion-button collapsed bg-light" type="button"
-                            data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false"
-                            aria-controls="collapseOne">
+                            data-bs-toggle="collapse" data-bs-target="#collapse`+ streamData.imdbID+`" aria-expanded="false"
+                            aria-controls="collapse`+ streamData.imdbID+`">
                             Description
                         </button>
                         </h2>
-                        <div id="collapseOne" class="accordion-collapse collapse bg-secondary" aria-labelledby="headingOne"
+                        <div id="collapse`+ streamData.imdbID+`" class="accordion-collapse collapse bg-secondary" aria-labelledby="heading`+ streamData.imdbID+`"
                         data-bs-parent="#accordionExample">
                         <div class="accordion-body">
                         Binge Bucket Rating: ` + streamData.imdbVoteCount +
@@ -28,14 +28,14 @@ async function runSearch(userService, UserSearchText) {
                         </div>
                     </div>
                     <div class="accordion-item">
-                        <h2 class="accordion-header" id="headingTwo">
+                        <h2 class="accordion-header" id="headingTwo`+ streamData.imdbID+`">
                         <button class="castButton accordion-button collapsed bg-light" type="button"
-                            data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false"
-                            aria-controls="collapseTwo">
+                            data-bs-toggle="collapse" data-bs-target="#collapseTwo`+ streamData.imdbID+`" aria-expanded="false"
+                            aria-controls="collapseTwo`+ streamData.imdbID+`">
                             Cast
                         </button>
                         </h2>
-                        <div id="collapseTwo" class="accordion-collapse collapse bg-secondary" aria-labelledby="headingTwo"
+                        <div id="collapseTwo`+ streamData.imdbID+`" class="accordion-collapse collapse bg-secondary" aria-labelledby="headingTwo`+ streamData.imdbID+`"
                         data-bs-parent="#accordionExample">
                         <div class="accordion-body">` + streamData.cast + `</div>
                         </div>
@@ -152,7 +152,6 @@ async function runSearch(userService, UserSearchText) {
         let cardHTML = "";
         for (i = 0; i < data.length; i++) {
             cardHTML = cardHTML + buildHTMLCard(data[i]);
-            console.log()
         };
 
         var card = document.createElement("div");
@@ -175,5 +174,10 @@ async function runSearch(userService, UserSearchText) {
 
 const userService = localStorage.getItem('service');
 const UserSearchText = localStorage.getItem('searchText');
+const userName = localStorage.getItem('userName');
+const userID = localStorage.getItem('userID');
+document.getElementById("bucketList").dataset.name = userName;
+document.getElementById("bucketList").dataset.userid = userID;
+document.getElementById("bucketName").innerText= userName + "'s Bucket";
 
 runSearch(userService, UserSearchText);

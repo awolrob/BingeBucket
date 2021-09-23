@@ -58,13 +58,13 @@ if (el) {
 
   var addToBucket = document.querySelectorAll('.bucketAddition')
   addToBucket.forEach(bucket => {
-    console.log(bucket);
+    // console.log(bucket);
     bucket.style.display = "none"
   });
 
   var searchServices = document.querySelectorAll('.bg-body')
   searchServices.forEach(search => {
-    console.log(search);
+    // console.log(search);
     search.style.display = "none"
   });
 

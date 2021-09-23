@@ -5,8 +5,8 @@ const withAuth = require('../utils/auth');
 
 // get all posts for dashboard
 router.get('/', withAuth, (req, res) => {
-  console.log(req.session);
-  console.log('======================');
+  // console.log(req.session);
+  // console.log('======================');
   Bucket.findAll({
     where: {
       user_id: req.session.user_id

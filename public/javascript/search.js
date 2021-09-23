@@ -30,6 +30,8 @@ async function runSearch(event) {
     }
     localStorage.setItem('service', serviceBtn);
     localStorage.setItem('searchText', searchText);
+    localStorage.setItem('userName',document.getElementById("bucketList").dataset.name);
+    localStorage.setItem('userID',document.getElementById("bucketList").dataset.userid);
 
     document.location.replace('/search');
 };

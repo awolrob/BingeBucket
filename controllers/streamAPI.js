@@ -10,7 +10,7 @@ var axios = require("axios").default;
 //e.g. getStreamList('netflix,prime','Harry Potter')
 //e.g. getStreamList('netflix','')
 const getStreamList = async function (servicesIn, searchTextIn) {
-	console.log('in Get Stream ', servicesIn, searchTextIn);
+	// console.log('in Get Stream ', servicesIn, searchTextIn);
 	var optionsMovie = {
 		method: 'GET',
 		url: 'https://streaming-availability.p.rapidapi.com/search/ultra',
@@ -117,7 +117,7 @@ const getStreamList = async function (servicesIn, searchTextIn) {
 // Usage id is IMDb 
 //e.g. getItemData('tt4154796'); for "Avengers: Endgame"
 const getItemData = async function (id) {
-	console.log(id)
+	// console.log(id)
 	var options = {
 		method: 'GET',
 		url: 'https://streaming-availability.p.rapidapi.com/get/ultra',

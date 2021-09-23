@@ -1,7 +1,7 @@
 async function bucketFormHandler(event) {
     event.preventDefault();
-    console.log(event.target.dataset.imdb);
-    console.log(event.target.dataset.originaltitle);
+    // console.log(event.target.dataset.imdb);
+    // console.log(event.target.dataset.originaltitle);
 
     const response = await fetch('api/features/bucket', {
         method: 'POST',
