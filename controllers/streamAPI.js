@@ -103,6 +103,7 @@ const getStreamList = async function (servicesIn, searchTextIn) {
 		resultData[i].imdbVoteCount =
 			resultData[i].imdbVoteCount *
 			resultData[i].imdbRating;
+			resultData[i].posterURLs.original = resultData[i].posterURLs["185"];
 	}
 
 	resultData.sort(function (a, b) {
