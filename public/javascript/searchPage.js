@@ -6,7 +6,7 @@ async function runSearch(userService, UserSearchText) {
                 <div class="card text-white bg-dark mb-1" style="max-width: 18rem;">
                 <img src="` + streamData.posterURLs.original + `" class="card-img-top" alt="...">
                 <div class="card-body">
-                    <h5 class="card-title">` + streamData.originalTitle + `</h5>
+                    <h5 class="card-title">` + streamData.title + `</h5>
                 </div>
                 <div class="card-body">
                     <div class="accordion" id="accordionExample">
@@ -46,7 +46,7 @@ async function runSearch(userService, UserSearchText) {
                 <div class="card-body d-grid gap-2">
 
                 <button class="add2BucketButton btn btn-dark border-light bucketAddition" data-imdb="`+ streamData.imdbID + 
-                `" data-originalTitle="` + streamData.originalTitle + `" type="button">Add to Bucket</button>
+                `" data-title="` + streamData.title + `" type="button">Add to Bucket</button>
 
                 `
 

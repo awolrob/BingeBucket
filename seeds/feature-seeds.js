@@ -4,7 +4,7 @@ const featuredata = [
   {
     imdb_id: 'tt4154756',
     user_id: 1,
-    originalTitle: 'Avengers: Infinity War'
+    title: 'Avengers: Infinity War'
   }
 ];
 

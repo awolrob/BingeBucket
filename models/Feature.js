@@ -24,7 +24,7 @@ Feature.init(
         key: 'id'
       }
     },
-    originalTitle: {
+    title: {
       type: DataTypes.STRING,
       allowNull: true
     }

@@ -38,7 +38,7 @@ const getStreamList = async function (servicesIn, searchTextIn) {
 			order_by: 'imdb_rating',
 			keyword: searchTextIn,
 			year_min: '1986',
-			language: 'en',
+			// language: 'en',
 			desc: 'true',
 			min_imdb_rating: '20',
 			max_imdb_rating: '100',
@@ -74,7 +74,7 @@ const getStreamList = async function (servicesIn, searchTextIn) {
 		params: {
 			country: 'us',
 			services: servicesIn,
-			language: 'en',
+			// language: 'en',
 			type: 'series',
 			order_by: 'imdb_rating',
 			desc: 'true',
@@ -103,14 +103,17 @@ const getStreamList = async function (servicesIn, searchTextIn) {
 		resultData[i].imdbVoteCount =
 			resultData[i].imdbVoteCount *
 			resultData[i].imdbRating;
-			resultData[i].posterURLs.original = resultData[i].posterURLs["185"];
+		resultData[i].posterURLs.original =
+			resultData[i]?.posterURLs["185"] ||
+			resultData[i]?.posterURLs["300"] ||
+			resultData[i]?.posterURLs["342"] ||
+			resultData[i].posterURLs?.original;
 	}
 
 	resultData.sort(function (a, b) {
 		return b.imdbVoteCount - a.imdbVoteCount; //|| a.glow - b.glow;
 	});
 
-	// console.log(resultData);
 	return resultData;
 };
 

@@ -37,7 +37,7 @@ router.post('/bucket', (req, res) => {
       id: req.body.id,
       imdb_id: req.body.imdb_id,
       user_id: req.session.user_id,
-      originalTitle: req.body.originalTitle
+      title: req.body.title
     })
       .then(dbFeatureData => res.json(dbFeatureData))
       .catch(err => {
